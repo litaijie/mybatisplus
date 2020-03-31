@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    database: oracle
+    show-sql: true
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCLCDB
+    username: c##mps
+    password: c##mps
+mybatis-plus:
+  mapper-locations: classpath*:/resources/mapper/common/**Mapper.xml
+  global-config:
+    db-config:
+      id-type: input  #全局设置使用uuid主键策略-->assign_uuid
+  type-aliases-package: com.mps.mybatisplus.user.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql
+    jdbc-type-for-null: null  #oracle数据库必须加这个
+logging:
+  level:
+    com.haocheng.study.springboot.mybatisplus: debug
+
+index-entity:
+  configs:
+    - docCode: store
+      indexName: store
+      type: base
+      documentPath: com.lifengdi.document.StoreDocument
+
+es:
+  host: localhost
+  port: 9200
+  scheme: http
