@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mps.mybatisplus.common.entity.MpsUser;
+import com.mps.mybatisplus.common.entity.MpsUserRmb;
+import com.mps.mybatisplus.common.vo.MpsUserVO;
+//import com.mps.mybatisplus.common.service.IMpsUserRmbService;
 import com.mps.mybatisplus.common.service.IMpsUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -74,5 +77,23 @@ public class MpsUserController {
                 .eq(MpsUser::getName, "ltj");
 
         return iMpsUserService.page(mpsUserPage, ltj);
+    }
+
+    @ApiOperation(value = "查看员工详情",notes = "--")
+    @GetMapping("/readUser")
+    public MpsUser readUser(@RequestParam String id){
+        MpsUser byId = iMpsUserService.getById(id);
+        return byId;
+    }
+
+    /**
+     * 多表查询
+     * @return
+     */
+    @ApiOperation(value = "分页查询员工及工资信息",notes = "--")
+    @PostMapping("/listUsers")
+    public Page<MpsUserRmb> listUsers(@RequestBody MpsUserVO mpsUserVO){
+        Page<MpsUserRmb> page =new Page<>(mpsUserVO.getPageNum(),mpsUserVO.getPageSize()==0?10:mpsUserVO.getPageSize());
+        return iMpsUserService.selectPage(page,mpsUserVO);
     }
 }

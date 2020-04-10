@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mps.mybatisplus.common.enums.UserEnum;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

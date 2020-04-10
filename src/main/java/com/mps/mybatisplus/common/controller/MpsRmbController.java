@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * qian 前端控制器
+ * 工资 前端控制器
  * </p>
  *
  * @author ken

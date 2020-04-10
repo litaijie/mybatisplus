@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * qian 服务实现类
+ * 工资 服务实现类
  * </p>
  *
  * @author ken

@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- * qian 服务类
+ * 工资 服务类
  * </p>
  *
  * @author ken

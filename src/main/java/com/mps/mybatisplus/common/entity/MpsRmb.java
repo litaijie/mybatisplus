@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * qian
+ * 工资
  * </p>
  *
  * @author ken
